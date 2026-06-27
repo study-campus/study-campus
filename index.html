@@ -1,5 +1,86 @@
-<link rel="manifest" href="manifest.json">
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Study Campus</title>
+    
+    <link rel="manifest" href="./manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="./assets/icons/icon-192.png">
 
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+    <link rel="stylesheet" href="./css/variables.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/pwa-style.css">
+
+    <script defer src="./js/app.js"></script>
+    <script defer src="./js/pwa-handler.js"></script>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="header-container">
+            <h1 class="logo"><a href="./index.html" aria-label="Study Campus 홈으로 이동">StudyCampus</a></h1>
+            
+            <nav class="gnb" aria-label="메인 네비게이션">
+                <ul>
+                    <li><a href="#course-high1">고1·2</a></li>
+                    <li><a href="#course-high3">고3·N수</a></li>
+                    <li><a href="#teachers">선생님</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-util">
+                <a href="./login.html" class="btn btn-outline">로그인</a>
+                <button id="mobileMenuBtn" class="mobile-toggle-btn" aria-label="모바일 메뉴 열기" aria-expanded="false">
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                    <span class="hamburger-bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobileSidebar" class="mobile-sidebar" aria-hidden="true">
+        <div class="sidebar-content">
+            <button id="closeSidebarBtn" class="close-btn" aria-label="메뉴 닫기">&times;</button>
+            <ul class="sidebar-menu">
+                <li><a href="#course-high1">고1·2 강좌</a></li>
+                <li><a href="#course-high3">고3·N수 강좌</a></li>
+                <li><a href="#teachers">선생님 소개</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-container">
+                <h2>원하는 대학을 향한 첫걸음,<br><strong>Study Campus</strong>가 함께합니다.</h2>
+                <p>기존의 학습 가치를 유지하며, 메가스터디급 인프라를 경험하세요.</p>
+                <a href="#courses" class="btn btn-primary">추천 강좌 보기</a>
+            </div>
+        </section>
+
+        <section class="quick-links-grid">
+            <button class="quick-item" data-action="my-classroom">📖 내 강의실</button>
+            <button class="quick-item" data-action="exam-archive">📝 기출문제</button>
+            <button class="quick-item" data-action="planner">🎯 학습플래너</button>
+            <button class="quick-item" data-action="qna">❓ 질문게시판</button>
+        </section>
+    </main>
+
+    <div id="pwaInstallBanner" class="pwa-banner hidden">
+        <p>📱 앱으로 다운받아 더 편리하게 이용하세요!</p>
+        <div class="pwa-banner-buttons">
+            <button id="pwaInstallBtn" class="btn btn-primary">앱 설치</button>
+            <button id="pwaCloseBtn" class="btn btn-close">닫기</button>
+        </div>
+    </div>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 Study Campus. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
